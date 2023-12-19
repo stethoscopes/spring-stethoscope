@@ -1,0 +1,5 @@
+server:
+  port: 3141
+spring:
+  profiles:
+    active: ${spring.profiles.default:lc-development}
