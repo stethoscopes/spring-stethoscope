@@ -10,7 +10,7 @@ public class HealthIndicatorService {
     @Value("${project.version}")
     private String version;
 
-    public String getProjectVersion() {
+    public String getVersion() {
         return version;
     }
 }

@@ -27,12 +27,14 @@ repositories {
 }
 
 dependencies {
+    // Spring
     implementation 'org.springframework.boot:spring-boot-starter-web'
 //    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // DB
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+    implementation 'org.apache.commons:commons-dbcp2:2.9.0'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -40,7 +42,16 @@ dependencies {
     // lombok getter setter mapping
     annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // Jasypt
+    implementation 'org.jasypt:jasypt:1.9.3'
+    implementation 'org.jasypt:jasypt-spring31:1.9.3'
+
+    // Sentry
+    implementation 'io.sentry:sentry-spring:5.5.0'
+    implementation 'io.sentry:sentry-logback:5.5.0'
+
+    // SWAGGER
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 }
 
 tasks.register('createProperties') {

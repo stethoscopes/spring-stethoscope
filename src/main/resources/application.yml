@@ -3,3 +3,26 @@ server:
 spring:
   profiles:
     active: ${spring.profiles.default:lc-development}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        one-indexed-parameters: false
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    disable-swagger-default-url: true
+    display-request-duration: true
+    tags-sorter: alpha
+    operations-sorter: alpha
+    doc-expansion: none
+    syntax-highlight:
+      theme: nord
+    persist-authorization: true
+    query-config-enabled: true
+  pre-loading-enabled: true
